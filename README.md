@@ -1,6 +1,7 @@
 # Shortcut Stability
-I love keyboard shortcuts, what I don't love is when they conflict between apps/OSes. You are probably a victim of this too. 
-For example:
+> Input consistency, on so many levels...
+
+I love keyboard shortcuts, I use them all the time. What I don't love, **at all**, is the context switch between various environments with conflicting shortcuts. When shortcuts conflict between apps/OSes, my productivity goes down the drain. I fear that I'll use the wrong copy register and spend more time undoing things, I spend a few seconds pondering if I'm using the right clipboard, if the command will copy the string or terminate the process, and these seconds add up, they tax my brain. You are probably a victim of this too. For example:
 
 - Did you recently switch to a Mac only to discover that all `Ctrl+*` shortcuts have changed to `⌘+*`?
 - Did you accidentally use `Ctrl+C` in Linux terminal only to see that it terminates current process instead of copying?
@@ -22,7 +23,7 @@ face that no one has sat down and asked themselves the same questions we ask our
 - Can I abstract this concept away for better reuse in the future?
 - How does this affect my muscle memory?
 
-This project is about accepting a new set of conventions to boost our productivity and consistency. It's about making a sacrifice and accepting something unconventional in exchange for better results in the future.
+This project is about accepting a new set of conventions to boost our productivity and consistency. It's about making a sacrifice and accepting something unconventional in exchange for better results in the future. It's about discarding old standards that were born out of coincidence and historical keyboard/terminal limitations (we have ways to work around them now, let's do that).
 
 
 ## Goals
@@ -36,14 +37,17 @@ For brevity and consistency between OSes I will use key logos instead of their l
 Symbols taken from [here](https://wincent.com/wiki/Unicode_representations_of_modifier_keys)
 
 ### Meta Keys
-⌘ - Windows/Command/Mod Key
-⌥ - Alt/Option Key
-⌃ - Control Key
-⇧ - Shift Key
+|⇪ - Caps Lock (Macro Key) - yes, I **AM** planning to use it, I will turn this nemesis into a savior
+|⌘ - Windows/Command/Mod Key
+|⌥ - Alt/Option Key
+|⌃ - Control Key
+|⇧ - Shift Key
+
+**NOTE**: I'm still trying to decide between `Alt` and `Ctrl` keys, the difference is rather arbitrary, and I have considered promoting `Ctrl` key, since `Alt` means "alternative" and implies a different meaning to the same action, whereas `Ctrl` means the event will do something "advanced". However, `Ctrl` has been much more common in user interaction, and compatibility with terminal shells, which can actually detect it. Therefore, as far as your muscle memory is concerned, `Ctrl` is lower precedence (more common) than `Alt`.
 
 I've ordered the keys (in my opinion) from highest to lowest precedence. Lower precedence means that the meta-behavior
 should be similar to that without this meta key. Higher precedence means that we have more leeway with what we are
-allowed to do with the given key combo (i.e. `Windows+c` does not at all have to be related to pressing `c` by itself).
+allowed to do with the given key combo (i.e. `⌘c` does not at all have to be related to pressing `c` by itself).
 Higher precedence, however, has other implications. If I map `⌘⌥c` to an action, for example, `⌘⌥⌃c` must in some
 way relate to that, since the presence of two meta-keys in that sequence makes this combination very significant to
 our muscle memory, much more so than `c` by itself, whereas `^c` doesn't necessarily need to relate to `c`. Don't
@@ -52,9 +56,9 @@ use precedence unnecessarily, it's always easier to escalate it than to revert i
 ### Existing Problems and Remedies
 
 #### Problem 1: Converging Environments
-Most keyboard shortcuts predate our century. They were chosen in a vacuum without thought (or need) of how they'd interact with shortcuts from other systems. Today, that environments have merged, and many of us find ourselves switching between them routinely, these interactions suddenly matter - both for our muscle memory's sake and our own memory's sake. 
+Most keyboard shortcuts predate our century. They were chosen in a vacuum without thought (or need) of how they'd interact with shortcuts from other systems. Today, that environments have merged, and many of us find ourselves switching between them routinely, these interactions suddenly matter - both for our muscle memory's sake and our own memory's sake.
 
-For example, `^C` (Ctrl+C) was used on Unix terminals to terminate existing command for decades. In a different world, on Windows, developers have decided to use the same shortcut to copy selection (among with Ctrl+V and Ctrl+X, which are right next to it). This worked wonderfully until we merged the GUI and terminal worlds together. OSX managed to bypass this problem by using `⌘C` instead. But that created a new problem, where we now have inconsistent ways to copy between Windows, OSX, and Linux (`^C` in Windows and Linux GUI, `^⇧C` in Linux terminal, and `⌘C` on OSX in GUI and terminal).
+For example, `^C` (Ctrl+C) was used on Unix terminals to terminate existing command for decades. In a different world, on Windows, developers have decided to use the same shortcut to copy selection, a sane choice given its convenient location (along with Ctrl+V and Ctrl+X, which are right next to it). This worked wonderfully until we merged the GUI and terminal worlds together. OSX managed to bypass this problem by using `⌘C` instead. But that created a new problem, where we now have inconsistent ways to copy between Windows, OSX, and Linux (`^C` in Windows and Linux GUI, `^⇧C` in Linux terminal, and `⌘C` on OSX in GUI and terminal).
 
 #### Problem 2: Use of Gaps
 When a user wants to define a macro for themselves, it's natural to take a key combination he/she knows isn't used for anything else. In fact, this is exactly what happens with vim users everyday. This also happens with terminal/screen/tmux users (how were `^A` and `^B` combos chosen?). And more recently this trend also started happening with window managers and shortcut/macro tools for the GUI.
@@ -90,6 +94,8 @@ Linux | awesome | tiling window manager, GUI automation
 Linux | xdotool | Key simulation for Linux, I've had issues triggering this from Awesome WM
 Linux Terminal | urxvt | Remap keys in user profile to send different (and unicode) sequences to your terminal
 Linux Terminal | xterm | Remap keys in user profile to send different (and unicode) sequences to your terminal
+Windows | AutoHotKey | Remap keys for OS, allows low-level remapping too
+Windows Terminal | [Putty-X](https://github.com/atsepkov/putty-X) | A putty fork that attempts to mimic urxvt and reads your Xresources file, trying to reproduce what it can, can be used as local cygwin terminal or remote
 Chrome | [Shortkeys Extension](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck?hl=en) | Remap Chrome shortcuts
 Terminal Shell | tmux | tiling shell-session manager, automator
 Terminal Shell | tmuxinator | automation via tmux and config files

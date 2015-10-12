@@ -1,0 +1,61 @@
+! keyboard-consistency project
+! Author: Alexander Tsepkov <atsepkov@gmail.com>
+! Copyright 2015, GPL3
+
+! consistency shortcuts for urxvt, source this file in your .Xresources
+! NOTE: the unicode-generating shortcuts for now simply allow vim to hook into key sequences
+! it doesnt otherwise see
+
+! Alt-Arrows
+! NOTE: these allow vim to see alt arrows but break tmux, which doesnt yet support unicode
+! bindings
+URxvt.keysym.M-Left:	⟵
+URxvt.keysym.M-Right:	⟶
+URxvt.keysym.M-Down:	↓
+URxvt.keysym.M-Up:		↑
+URxvt.keysym.M-comma:	≤
+URxvt.keysym.M-period:	≥
+
+! Give vim ability to detect ^/ to comment/uncomment
+! NOTE: inconsistent with Xcode/Atom, which use Command+/, will need to remap those apps too
+URxvt.keysym.C-slash: ↹
+
+! Below shortcuts will server a few purposes, first we allow Alt+letter Greek shortcuts like
+! OSX already does, second we can map vim to react to them, since vim doesnt see Alt well.
+URxvt.keysym.M-a:		α
+URxvt.keysym.M-b:		ß
+URxvt.keysym.M-c:		©
+URxvt.keysym.M-d:		δ
+URxvt.keysym.M-e:		ε
+URxvt.keysym.M-f:		φ
+URxvt.keysym.M-g:		γ
+URxvt.keysym.M-h:		η
+URxvt.keysym.M-i:		ι
+URxvt.keysym.M-j:		™
+URxvt.keysym.M-k:		κ
+URxvt.keysym.M-l:		λ
+URxvt.keysym.M-m:		μ
+URxvt.keysym.M-n:		ν
+URxvt.keysym.M-o:		ο
+URxvt.keysym.M-p:		π
+URxvt.keysym.M-q:		θ
+URxvt.keysym.M-r:		ρ
+URxvt.keysym.M-s:		σ
+URxvt.keysym.M-t:		τ
+URxvt.keysym.M-u:		υ
+URxvt.keysym.M-v:		ξ
+URxvt.keysym.M-w:		ω
+URxvt.keysym.M-x:		χ
+URxvt.keysym.M-y:		ψ
+URxvt.keysym.M-z:		ζ
+
+! Future Expansion / Consistency Aim
+! Letter = English / Latin
+! Shift+Letter = Capital English / Latin
+! Alt+Letter = Greek / Common Symbols (copyright/etc.)
+! Alt+Shift+Letter = Capital Greek
+! Ctrl+Letter = System
+! Ctrl+Shift+Letter = System (Reverse/Related)
+! Ctrl+Alt+Letter = Cyrillic / High Level System
+! Ctrl+Alt+Shift+Letter = Capital Cyrillic / High Level System (Reverse/Related)
+! Windows+* = GUI + above stack (probably won't be captured by urxvt - unless we're faking a GUI-related event via shell)

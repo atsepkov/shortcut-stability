@@ -1,4 +1,7 @@
+# Copyright 2015 Alexander Tsepkov <atsepkov@gmail.com>
 
-# remap Ctrl+K to kill app instead of Ctrl+C, this stacks with another hack from urxvt to send Ctrl+Q as Ctrl+K
-# the end result is Ctrl+Q quits out of current process, consistent with Windows+Q that quits the GUI app for me
-stty intr \^K
+# Tell the telegraph I want my keybindings back, it's not 1950 anymore
+stty stop ''; stty start '';
+
+# Now that we're not blind to Ctrl+Q, let's map it to termination
+stty intr \^Q

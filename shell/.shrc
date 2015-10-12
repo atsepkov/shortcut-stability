@@ -11,3 +11,5 @@ case $- in
 		stty `cat .stty`
 		bind -u quoted-insert
 esac
+
+# alternatively, source stty_gen.sh instead

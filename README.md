@@ -1,5 +1,6 @@
 # Shortcut Stability
 > Input consistency, on so many levels...
+
 > Innovations are made when conventions are broken
 
 I love keyboard shortcuts, I use them all the time. What I don't love, **at all**, is the context switch between various environments with conflicting shortcuts. When shortcuts conflict between apps/OSes, my productivity goes down the drain. I fear that I'll use the wrong copy register and spend more time undoing things, I spend a few seconds pondering if I'm using the right clipboard, if the command will copy the string or terminate the process, and these seconds add up, they tax my brain. You are probably a victim of this too. For example:
@@ -33,16 +34,23 @@ This project is about accepting a new set of conventions to boost our productivi
 - Consistent window management (especially for tiling WMs) that's intuitive
 
 
+## Existing Features
+Here is a list of features we already support today:
+
+- Consistent `Ctrl+C` and `Ctrl+V` inside GUI and terminal (urxvt), even inside vim (inside the same terminal, yeah, magic!)
+- Consistent `Ctrl+Q` to terminate terminal app/process
+
+
 ## Key Names
 For brevity and consistency between OSes I will use key logos instead of their longer names. 
 Symbols taken from [here](https://wincent.com/wiki/Unicode_representations_of_modifier_keys)
 
 ### Meta Keys
-|⇪ - Caps Lock (Macro Key) - yes, I **AM** planning to use it, I will turn this nemesis into a savior
-|⌘ - Windows/Command/Mod Key
-|⌥ - Alt/Option Key
-|⌃ - Control Key
-|⇧ - Shift Key
+⇪ - Caps Lock (Macro Key) - yes, I **AM** planning to use it, I will turn this nemesis into a savior  
+⌘ - Windows/Command/Mod Key  
+⌥ - Alt/Option Key  
+⌃ - Control Key  
+⇧ - Shift Key  
 
 **NOTE**: I'm still trying to decide between `Alt` and `Ctrl` keys, the difference is rather arbitrary, and I have considered promoting `Ctrl` key, since `Alt` means "alternative" and implies a different meaning to the same action, whereas `Ctrl` means the event will do something "advanced". However, `Ctrl` has been much more common in user interaction, and compatibility with terminal shells, which can actually detect it. Moreover, years of using Windows have conditioned us that `Alt` is typically involved in more destructive operations, like `Alt+F4` and `Alt+Ctrl+Del`. Therefore, as far as your muscle memory is concerned, `Ctrl` is lower precedence (more common) than `Alt`.
 

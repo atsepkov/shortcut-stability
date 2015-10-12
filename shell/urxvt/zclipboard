@@ -1,0 +1,51 @@
+#! perl -w
+
+# Copyright 2015 Alexander Tsepkov <atsepkov@gmail.com>
+# Why Z? Because xclipboard was already taken and this is at least 2 letters better than that version
+
+# Usage:
+# URxvt.perl-ext-common: zclipboard
+# URxvt.keysym.Ctrl-c: perl:zclipboard:copy
+# URxvt.keysym.Ctrl-v: perl:zclipboard:paste
+
+# consult command "xmodmap" to see what your modifier mapped into.
+
+sub copy {
+	my ($self) = @_;
+	my $pid = open( pout, "| xsel -ib" ) or die "fork";
+	print pout $self->selection;
+	close(pout) or die "close";
+}
+
+sub paste {
+	my ($self) = @_;
+	my $content = `xsel -ob` ;
+	$self->tt_paste ($content);
+}
+
+my $active_app='urxvt';
+sub on_osc_seq {
+	my ($self, $op, $args, $resp) = @_;
+	if ($op == 2) {
+		$active_app = $args;
+	}
+	return [];
+}
+
+sub on_user_command {
+	my ($self, $cmd) = @_;
+	if ($cmd eq "xclipboard:copy") {
+		if ($active_app =~ 'VIM') {
+			$self->tt_write('');
+		} else {
+			$self->copy;
+		}
+	}
+	if ($cmd eq "xclipboard:paste") {
+		if ($active_app =~ 'VIM') {
+			$self->tt_write('');
+		} else {
+			$self->paste;
+		}
+	}
+}

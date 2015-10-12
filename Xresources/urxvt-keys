@@ -18,7 +18,7 @@ URxvt.keysym.M-period:	≥
 
 ! Ctrl+C/Ctrl+V
 ! NOTE: this seems to break vim copy/paste outside of insert mode, need to fix that
-URxvt.perl-ext-common: matcher,xclipboard
+URxvt.perl-ext-common: matcher,zclipboard
 URxvt.clipboard.autocopy: true
 URxvt.keysym.C-c: perl:xclipboard:copy
 URxvt.keysym.C-v: perl:xclipboard:paste

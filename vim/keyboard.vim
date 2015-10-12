@@ -27,10 +27,10 @@ imap Od <C-o>B
 
 " Ctrl + C/V to copy/paste
 " this will emulate GUI-like Ctrl+C/V when clipboard is setup
-nmap <C-c> "*y
-nmap <C-v> "*p
-vmap <C-c> "*y
-vmap <C-v> "*p
+nmap <C-c> "+y
+nmap <C-v> "+p
+vmap <C-c> "+y
+vmap <C-v> "+p
 
 
 

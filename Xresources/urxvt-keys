@@ -49,6 +49,33 @@ URxvt.keysym.M-x:		χ
 URxvt.keysym.M-y:		ψ
 URxvt.keysym.M-z:		ζ
 
+URxvt.keysym.M-A:		Α
+URxvt.keysym.M-B:		Β
+URxvt.keysym.M-C:		℗
+URxvt.keysym.M-D:		Δ
+URxvt.keysym.M-E:		Ε
+URxvt.keysym.M-F:		Φ
+URxvt.keysym.M-G:		Γ
+URxvt.keysym.M-H:		Η
+URxvt.keysym.M-I:		Ι
+URxvt.keysym.M-J:		®
+URxvt.keysym.M-K:		Κ
+URxvt.keysym.M-L:		Λ
+URxvt.keysym.M-M:		Μ
+URxvt.keysym.M-N:		Ν
+URxvt.keysym.M-O:		Ο
+URxvt.keysym.M-P:		Π
+URxvt.keysym.M-Q:		Θ
+URxvt.keysym.M-R:		Ρ
+URxvt.keysym.M-S:		Σ
+URxvt.keysym.M-T:		Τ
+URxvt.keysym.M-U:		Υ
+URxvt.keysym.M-V:		Ξ
+URxvt.keysym.M-W:		Ω
+URxvt.keysym.M-X:		Χ
+URxvt.keysym.M-Y:		Ψ
+URxvt.keysym.M-Z:		Ζ
+
 ! Future Expansion / Consistency Aim
 ! Letter = English / Latin
 ! Shift+Letter = Capital English / Latin

@@ -1,5 +1,6 @@
 # Shortcut Stability
 > Input consistency, on so many levels...
+> Innovations are made when conventions are broken
 
 I love keyboard shortcuts, I use them all the time. What I don't love, **at all**, is the context switch between various environments with conflicting shortcuts. When shortcuts conflict between apps/OSes, my productivity goes down the drain. I fear that I'll use the wrong copy register and spend more time undoing things, I spend a few seconds pondering if I'm using the right clipboard, if the command will copy the string or terminate the process, and these seconds add up, they tax my brain. You are probably a victim of this too. For example:
 
@@ -43,7 +44,7 @@ Symbols taken from [here](https://wincent.com/wiki/Unicode_representations_of_mo
 |⌃ - Control Key
 |⇧ - Shift Key
 
-**NOTE**: I'm still trying to decide between `Alt` and `Ctrl` keys, the difference is rather arbitrary, and I have considered promoting `Ctrl` key, since `Alt` means "alternative" and implies a different meaning to the same action, whereas `Ctrl` means the event will do something "advanced". However, `Ctrl` has been much more common in user interaction, and compatibility with terminal shells, which can actually detect it. Therefore, as far as your muscle memory is concerned, `Ctrl` is lower precedence (more common) than `Alt`.
+**NOTE**: I'm still trying to decide between `Alt` and `Ctrl` keys, the difference is rather arbitrary, and I have considered promoting `Ctrl` key, since `Alt` means "alternative" and implies a different meaning to the same action, whereas `Ctrl` means the event will do something "advanced". However, `Ctrl` has been much more common in user interaction, and compatibility with terminal shells, which can actually detect it. Moreover, years of using Windows have conditioned us that `Alt` is typically involved in more destructive operations, like `Alt+F4` and `Alt+Ctrl+Del`. Therefore, as far as your muscle memory is concerned, `Ctrl` is lower precedence (more common) than `Alt`.
 
 I've ordered the keys (in my opinion) from highest to lowest precedence. Lower precedence means that the meta-behavior
 should be similar to that without this meta key. Higher precedence means that we have more leeway with what we are
@@ -159,7 +160,7 @@ Modifier | Context
 Shift    | Subtle modifier to existing combo or another meta key (perform related or reverse action)
 Ctrl     | Modify focused object in relation to current context (still text entry)
 Alt/Option | Alter context (typically modify context in relation to parent context as if it itself was now the object of interest) (this can be current tab or paragraph, we're typically approaching GUI land at this point - but not quite in GUI yet)
-Windows/Command | Manipulate the GUI container (this modifier treats current window as `object` instead of the text inside of it)
+Windows/Command | Manipulate the GUI container (this modifier treats current window as `object` instead of the text inside of it - think of it as the GUI-equivalent of `Ctrl`)
 
 Note that the above modifiers can (and probably will) stack. For example, `Shift+Left` will swap the word under cursor in vim with one to the left, while `Windows+Shift+Left` will swap the current window with one to the left of it (or push current window to the left half of the screen if you're not in tiling mode/WM). `Ctrl+Arrow` may jump to previous/next word, while `Windows+Ctrl+Arrow` may jump to different desktop.
 

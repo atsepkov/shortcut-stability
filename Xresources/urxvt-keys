@@ -20,6 +20,9 @@ URxvt.keysym.M-period:	≥
 ! NOTE: inconsistent with Xcode/Atom, which use Command+/, will need to remap those apps too
 URxvt.keysym.C-slash: ↹
 
+! Remap certain keys that the shell never sees because theyre swallowed by TTY (I may regret this when shit hits the fan)
+URxvt.keysym.C-q:		
+
 ! Below shortcuts will server a few purposes, first we allow Alt+letter Greek shortcuts like
 ! OSX already does, second we can map vim to react to them, since vim doesnt see Alt well.
 URxvt.keysym.M-a:		α

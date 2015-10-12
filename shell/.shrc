@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Copyright 2015 Alexander Tsepkov <atsepkov@gmail.com>
+
+# source me, regardless of what your shell is
+
+# remap Ctrl+C to Ctrl+K (which in turn is faked from Ctrl+Q via terminal emulator) - because tty sucks
+# What this means to you: from now on Ctrl+C is always copy, Ctrl+Q terminates current process, and don't touch Ctrl+K
+case $- in
+	*i*)
+		stty `cat .stty`
+		bind -u quoted-insert
+esac

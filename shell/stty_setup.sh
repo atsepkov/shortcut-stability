@@ -4,4 +4,5 @@
 stty stop ''; stty start '';
 
 # Now that we're not blind to Ctrl+Q, let's map it to termination
-stty intr \^Q
+stty intr \^Q		# free Ctrl+C for copy
+stty lnext \^-		# free Ctrl+V for paste

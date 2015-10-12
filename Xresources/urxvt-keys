@@ -16,6 +16,13 @@ URxvt.keysym.M-Up:		↑
 URxvt.keysym.M-comma:	≤
 URxvt.keysym.M-period:	≥
 
+! Ctrl+C/Ctrl+V
+! NOTE: this seems to break vim copy/paste outside of insert mode, need to fix that
+URxvt.perl-ext-common: matcher,xclipboard
+URxvt.clipboard.autocopy: true
+URxvt.keysym.C-c: perl:xclipboard:copy
+URxvt.keysym.C-v: perl:xclipboard:paste
+
 ! Give vim ability to detect ^/ to comment/uncomment
 ! NOTE: inconsistent with Xcode/Atom, which use Command+/, will need to remap those apps too
 URxvt.keysym.C-slash: ↹

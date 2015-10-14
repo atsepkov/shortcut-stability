@@ -63,6 +63,14 @@ way relate to that, since the presence of two meta-keys in that sequence makes t
 our muscle memory, much more so than `c` by itself, whereas `^c` doesn't necessarily need to relate to `c`. Don't
 use precedence unnecessarily, it's always easier to escalate it than to revert it.
 
+I've also been considering unique use cases for each key to make it easier to decide which meta key the shortcut should use, but none of these are set in stone yet:
+
+⇧ - Enhancement/Inverse/Drag  
+⌃ - Context dimension (interact with the context)  
+⌥ - Time dimension (interact with history, undo/redo, calendar, notifications, and cronjobs)  
+⌘ - Graphical dimension (interact with windows, graphics, OS)  
+⇪ - Lock a sequence/key to auto-repeat it (to avoid holding it repeatedly - a hybrid of vim `.`, number prefix and `q` shortcuts)  
+
 ### Existing Problems and Remedies
 
 #### Problem 1: Converging Environments

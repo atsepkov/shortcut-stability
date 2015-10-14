@@ -1,0 +1,15 @@
+/* ~/Library/KeyBindings/DefaultKeyBinding.dict */
+{
+"^z" = "undo:";
+"^x" = "cut:";
+"^v" = "paste:";
+"^c" = "copy:";
+"^a" = "selectAll:";
+"\UF729" = "moveToBeginningOfLine:"; /* Home */ 
+"\UF72B" = "moveToEndOfLine:"; /* End */
+"\UF72C" = "pageUp:"; /* PageUp */
+"\\UF72D" = "pageDown:"; /* PageDown */
+"^\UF703" = "moveWordForward:"; /* Ctrl-Left */
+"^\UF702" = "moveWordBackward:"; /* Ctrl-Right */
+
+}

@@ -11,6 +11,7 @@ I love keyboard shortcuts, I use them all the time. What I don't love, **at all*
 - Do you get confused because your tiling WM shortcuts differ from tmux, which in turn differ from vim for doing conceptually the same action?
 - Do you spend hours pondering which shortcuts in vim you haven't yet assigned to?
 - Do you spend hours pondering which shortcut you assigned the action you really need now to?
+- Do you cry yourself to sleep everyday thinking of all the different clipboards and shortcuts you have to juggle between vim, tmux, your Linux box, your OSX box, your Windows box, Putty, iTerm2, urxvt, and xterm?
 
 This is my attempt to remedy that. This is pretty much a work in progress so use at your own risk, and feel free to 
 add your own consistency shortcuts for other apps (i.e. emacs) to this repo. The requirement is that it must not 

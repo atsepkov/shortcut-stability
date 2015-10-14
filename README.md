@@ -63,13 +63,36 @@ way relate to that, since the presence of two meta-keys in that sequence makes t
 our muscle memory, much more so than `c` by itself, whereas `^c` doesn't necessarily need to relate to `c`. Don't
 use precedence unnecessarily, it's always easier to escalate it than to revert it.
 
+#### Vision for Meta Key Niches
 I've also been considering unique use cases for each key to make it easier to decide which meta key the shortcut should use, but none of these are set in stone yet:
 
 ⇧ - Enhancement/Inverse/Drag  
-⌃ - Context dimension (interact with the context)  
+⌃ - Context dimension (interact with the surrounding context)  
 ⌥ - Time dimension (interact with history, undo/redo, calendar, notifications, and cronjobs)  
 ⌘ - Graphical dimension (interact with windows, graphics, OS)  
 ⇪ - Lock a sequence/key to auto-repeat it (to avoid holding it repeatedly - a hybrid of vim `.`, number prefix and `q` shortcuts)  
+
+Let me explain my vision for caps lock in a bit more detail. It would function similar to sed's delimiter, pressing caps lock once will activate a macro recording. Pressing it a second time would terminate the recording and replay it as a modifier for each subsequent key combo until you press caps lock again to discard the macro. For example, here are some combos:
+
+- ⇪5⇪		# now every action you do will be repeated 5 times until you press caps lock again
+- ⇪⇧⇪		# now shift is active until you press caps lock again - this is equivalent to existing caps lock
+- ⇪^⇪		# now you no longer need to hold Ctrl key, this is similar to vim's normal mode
+- ⇪⌥⇪		# similar to above, but instead of interacting with the context, you interact with time
+- ⇪^⇧⇪		# as if you're holding ctrl+shift before every keypress until you press caps lock again
+- ⇪99⌘⇪		# pressing `q` now will close every focusable GUI app
+
+#### Day in the Life of a Shortcut
+What's the point of these dimensions? Well, let's look at a simple example, copy/paste.
+
+Dimension | X | C | V
+----------|---|---|---
+  | print 'x' | print 'c' | print 'v'
+⇧ | print 'X' | print 'C' | print 'V'
+⌃ (context) | cut selection or word under cursor into the clipboard stack | copy selection or word under cursor into the clipboard stack (`clipboard.push()`) | paste the top of the clipboard stack (`clipboard.peek()`)
+^⇧ | pop the top of the stack (`clipboard.pop()`) | rotate the clipboard stack by 1 (similar to emacs killring) | edit contents of the top item in the clipboard stack (in a popup window)
+⌥ (time) | stop recording a macro | start recording a macro (a combination of clicks and keyboard events) | replay the macro
+⌘ (GUI) | minimize/hide the window | bookmark this process/app/window | spawn new window for the bookmarked app / or maximize if it was minimized
+
 
 ### Existing Problems and Remedies
 

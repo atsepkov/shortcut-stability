@@ -76,9 +76,9 @@ Let me explain my vision for caps lock in a bit more detail. It would function s
 
 - ⇪5⇪		now every action you do will be repeated 5 times until you press caps lock again
 - ⇪⇧⇪		now shift is active until you press caps lock again - this is equivalent to existing caps lock
-- ⇪⌃^⇪		now you no longer need to hold Ctrl key, this is similar to vim's normal mode
+- ⇪⌃⇪		now you no longer need to hold Ctrl key, this is similar to vim's normal mode
 - ⇪⌥⇪		similar to above, but instead of interacting with the context, you interact with time
-- ⇪⌃^⇧⇪		as if you're holding ctrl+shift before every keypress until you press caps lock again
+- ⇪⌃⇧⇪		as if you're holding ctrl+shift before every keypress until you press caps lock again
 - ⇪99⌘⇪		pressing `q` now will close every focusable GUI app
 
 #### Day in the Life of a Shortcut
